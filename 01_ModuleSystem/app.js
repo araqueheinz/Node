@@ -1,3 +1,8 @@
+/*
+  Run Node
+    `node app.js`
+*/
+
 // https://nodejs.org/dist/latest-v13.x/docs/api/fs.html
 
 // Require the File System Module
@@ -7,6 +12,10 @@ const getNotes = require('./notes');
 
 // https://www.npmjs.com/package/validator
 const validator = require('validator');
+
+// https://www.npmjs.com/package/chalk
+const chalk = require('chalk');
+
 
 fs.writeFileSync('notes.txt', 'This file was created by Node.js');
 
@@ -19,11 +28,14 @@ fs.writeFileSync('notes.txt', 'This file was created by Node.js');
 
 fs.appendFileSync('notes.txt', ' My name is Heinz Araque.');
 
-console.log(utils.name);
+console.log('My name is ', utils.name, 'and it was required from the utils.js file');
 
-const sum = utils.add(7, 9);
+const a = 7;
+const b = 9;
+const sum = utils.add(a, b);
 
-console.log(sum);
+console.log(`The sum of ${a} + ${b} is`, sum, 'and it was a required function from the utils.js file');
+console.log(" ");
 
 /*
   Challenge
@@ -35,7 +47,8 @@ console.log(sum);
 
 const myNotes = getNotes();
 
-console.log(myNotes);
+console.log('this notes came from notes.js file. ', myNotes);
+console.log(" ");
 
 const email = 'heinz@example.com';
 const url = 'https://fonda.com';
@@ -49,6 +62,20 @@ console.log(" ");
 console.log(`Is ${notUrl} a valid url? `, validator.isURL(notUrl));
 console.log(`Is ${url} a valid url? `, validator.isURL(url));
 
+console.log(" ");
+console.log(chalk.blue("Using Chalk npm package"));
+console.log(" ");
+
+/*
+  Challenge
+  1. Install version 2.4.1 of chalk // npm i chalk@2.4.1
+  2. Load, import, require chalk into app.js
+  3. Use it to console.log "Success!" in green
+  4. check
+*/
+
+const success = chalk.green.inverse.bold("Success!");
+console.log(success);
 
 /*
   Run Node
