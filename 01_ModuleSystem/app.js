@@ -8,9 +8,6 @@ const getNotes = require('./notes');
 // https://www.npmjs.com/package/validator
 const validator = require('validator');
 
-// https://www.npmjs.com/package/chalk
-const chalk = require('chalk');
-
 fs.writeFileSync('notes.txt', 'This file was created by Node.js');
 
 /* 
