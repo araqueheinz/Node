@@ -12,8 +12,11 @@ Node is a JavaScript runtime built on Chrome's V8 JavaScript engine. V8 JavaScri
 - Node package (npm) is the largest ecosystem open source libraries
 
 ## Resources
-[Node.JS Docs](https://nodejs.org/en/docs/)
-[npm](https://www.npmjs.com/)
+- [Node.JS Docs](https://nodejs.org/en/docs/)
+- [npm](https://www.npmjs.com/)
+
+## Global packages
+- [nodemon](https://www.npmjs.com/package/nodemon) `npm i nodemon -g`
 
 ## Run Node.JS
 `node example.js`
