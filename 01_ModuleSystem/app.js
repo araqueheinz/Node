@@ -5,6 +5,9 @@ const fs = require('fs');
 const utils = require('./utils');
 const getNotes = require('./notes');
 
+// https://www.npmjs.com/package/validator
+const validator = require('validator');
+
 fs.writeFileSync('notes.txt', 'This file was created by Node.js');
 
 /* 
@@ -32,9 +35,23 @@ console.log(sum);
 
 const myNotes = getNotes();
 
-console.log(myNotes)
+console.log(myNotes);
+
+const email = 'heinz@example.com';
+const url = 'https://fonda.com';
+const notUrl = 'htps://fonda.com';
+
+console.log(`Is ${email} a valid email? `, validator.isEmail(email));
+console.log(`Is ${url} a valid email? `, validator.isEmail(url));
+
+console.log(" ");
+
+console.log(`Is ${notUrl} a valid url? `, validator.isURL(notUrl));
+console.log(`Is ${url} a valid url? `, validator.isURL(url));
+
 
 /*
   Run Node
     `node app.js`
 */
+
